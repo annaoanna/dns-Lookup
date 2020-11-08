@@ -6,7 +6,7 @@ import socket
 import sys
 import struct
 
-# construct the DNS query
+# DNS query
 def dnsquery(domain):
     d = ""
     for a in domain.split('.'):
@@ -23,7 +23,7 @@ def dnsquery(domain):
     m = header + q
     return m
 
-# send the DNS query to the DNS server using UDP
+# DNS query to the DNS server using UDP
 def Conn (ser, q):
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
