@@ -145,6 +145,20 @@ def Conn (ser, q):
     print("")
     sock.close()
     
+    if _name_ == '_main_':
+    if len(sys.argv) < 3:
+        print('Please provide domain_name followed by DNS server IP')
+    
+    else:
+        domain_name = sys.argv[1]
+        server_ip = sys.argv[2]
+        # server_ip = '8.8.8.8'
+        # domain_name = 'cs.fiu.edu'
+        server = (server_ip, 53)
+        print("DNS server to query: %s" % server_ip)
+        print("Domain Name: %s" % domain_name)
+        query = dnsquery(domain_name)
+        Conn(server, query)
     
 
 
